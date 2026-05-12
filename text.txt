@@ -1,0 +1,75 @@
+return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4"
+      onClick={/* handleBackdropClick */}
+    >
+      <div className="w-full max-w-md rounded-xl bg-white shadow-2xl">
+ 
+        <div className="flex items-center justify-between border-b border-gray-100 px-6 py-4">
+          <h2 className="text-base font-semibold text-gray-900">Add contact</h2>
+          <button
+            onClick={onClose}
+            className="rounded-md p-1 text-gray-400 hover:bg-gray-100 transition-colors"
+          >
+            ✕
+          </button>
+        </div>
+ 
+        <form onSubmit={/* handleSubmit */} className="flex flex-col gap-4 px-6 py-5">
+ 
+          <div className="flex flex-col gap-1.5">
+            <label className="text-sm font-medium text-gray-700">Name</label>
+            <input
+              name="name"
+              value={/* formData.name */}
+              onChange={/* handleChange */}
+              placeholder="Jane Smith"
+              className="rounded-lg border border-gray-200 px-3 py-2 text-sm outline-none focus:border-gray-400 focus:ring-2 focus:ring-gray-200 transition"
+            />
+          </div>
+ 
+          <div className="flex flex-col gap-1.5">
+            <label className="text-sm font-medium text-gray-700">Email</label>
+            <input
+              name="email"
+              value={/* formData.email */}
+              onChange={/* handleChange */}
+              placeholder="jane@example.com"
+              className="rounded-lg border border-gray-200 px-3 py-2 text-sm outline-none focus:border-gray-400 focus:ring-2 focus:ring-gray-200 transition"
+            />
+          </div>
+ 
+          <div className="flex flex-col gap-1.5">
+            <label className="text-sm font-medium text-gray-700">Phone</label>
+            <input
+              name="phone"
+              value={/* formData.phone */}
+              onChange={/* handleChange */}
+              placeholder="+1 (555) 000-0000"
+              className="rounded-lg border border-gray-200 px-3 py-2 text-sm outline-none focus:border-gray-400 focus:ring-2 focus:ring-gray-200 transition"
+            />
+          </div>
+ 
+          {/* mutation.isError && <p className="text-sm text-red-500">{mutation.error.message}</p> */}
+ 
+          <div className="flex justify-end gap-2 pt-1">
+            <button
+              type="button"
+              onClick={onClose}
+              className="rounded-lg border border-gray-200 px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 transition-colors"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              disabled={/* mutation.isPending */}
+              className="rounded-lg bg-gray-900 px-4 py-2 text-sm font-medium text-white hover:bg-gray-700 disabled:opacity-60 transition-colors"
+            >
+              {/* mutation.isPending ? "Adding…" : "Add contact" */}
+            </button>
+          </div>
+ 
+        </form>
+      </div>
+    </div>
+  );
